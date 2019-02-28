@@ -1,0 +1,13 @@
+58.1
+Najnizsza temp w stacji 1: -1011
+Najnizsza temp w stacji 2: -1001100
+Najnizsza temp w stacji 3: -1001011
+
+58.2
+Tyle razy zegar byl niepoprawny w kazdej stacji: 182
+
+58.3
+Liczba dni rekordowych: 42
+
+58.4
+Najwiekszy skok temperatury w stacji S1: 25

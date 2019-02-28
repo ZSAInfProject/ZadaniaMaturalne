@@ -1,0 +1,11 @@
+62.1
+Maksimum: 777044, minimum: 1002
+
+62.2
+Pierwszy element: 639, najdluzszy ciag ma tyle wyrazow: 6
+
+62.3
+Tyle samo wierszy ma taka sama wartosc: 160, tyle wierszy w liczby2 jest wiekszych: 357
+
+62.4
+W zapisie dziesietnym 6 wystepuje tyle razy: 411, a w oktalnym dodatkowo: 625 razy

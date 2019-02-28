@@ -16,3 +16,19 @@ def load_file():
         f = request.files['file']
         f.save(secure_filename(f.filename))
     return "" + f.filename
+
+@app.route('/zadanie/60/')
+def page2():
+    return render_template('zadanie60.html')
+
+@app.route('/zadanie/60/', methods=['POST'])
+def load_file2():
+    if request.method == 'POST':
+        f = request.files['file']
+        f.save(secure_filename(f.filename))
+    from zbior_zadan.zad60.zad60 import zadanie60
+    zadanie60()
+    file = open('wyniki.txt', 'r')
+    data = file.read()
+    file.close()
+    return data
