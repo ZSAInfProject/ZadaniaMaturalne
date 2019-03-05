@@ -1,0 +1,1 @@
+web: gunicorn zadania:app --log-file=-
