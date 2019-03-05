@@ -31,4 +31,5 @@ def load_file2():
     file = open('wyniki.txt', 'r')
     data = file.read()
     file.close()
-    return data
+    data = data.split('\n')
+    return render_template('zadanie60.html', data=data)

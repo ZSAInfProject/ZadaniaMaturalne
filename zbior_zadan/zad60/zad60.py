@@ -1,3 +1,5 @@
+from math import sqrt
+
 def zadanie60():
     liczby = []
 
@@ -18,11 +20,21 @@ def zadanie60():
 
     for liczba in liczby:
         dzielniki = [1]
-        czynnik = 2
-        while czynnik <= liczba/2:
-            if liczba % czynnik == 0:
+        czynnik = 3
+        root = int(sqrt(liczba)) + 1
+        if liczba % 2 == 0:
+            dzielniki.append(2)
+            dzielniki.append(liczba/2)
+        while czynnik <= root:
+            if not liczba % czynnik:
                 dzielniki.append(czynnik)
-            czynnik += 1
+                second = int(liczba/czynnik)
+                if second != root:
+                    dzielniki.append(second)
+            if 2 not in dzielniki:
+                czynnik += 2
+            else:
+                czynnik += 1
         dzielniki.append(liczba)
         if len(dzielniki) == 18:
             with open("wyniki.txt", "a") as file:
@@ -50,3 +62,4 @@ def zadanie60():
         file.write("Ilosc liczb mniejszych od 1000: {}\n".format(len(mniej1000)))
         file.write("Dwie ostatnie liczby mniejsze od 1000: {}, {}\n\n".format(mniej1000[len(mniej1000)-1], mniej1000[len(mniej1000)-2]))
         file.write("60.3\n")
+        file.write("Najwieksza wzglednie pierwsza: {}".format(maksimum))
