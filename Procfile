@@ -1,1 +1,1 @@
-web: python dealscraper/zadania.py
+web: python zadania.py
