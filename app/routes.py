@@ -2,6 +2,7 @@ from app import app
 from flask import render_template, request
 from werkzeug.utils import secure_filename
 
+@app.route('/index')
 @app.route('/')
 def welcome():
     return render_template('index.html')
