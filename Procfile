@@ -1,1 +1,1 @@
-web: gunicorn zadania:app --log-file=-
+web: python dealscraper/zadania.py
