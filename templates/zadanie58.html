@@ -1,4 +1,14 @@
 {% extends "zadanie.html" %}
 {% block title %}
 <title>Zadanie 58</title>
+    {% if data %}
+        {% for line in data %}
+        <p>{{line}}</p>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
+
+{% block files %}
+    <input type="file" name="file2" /><br />
+    <input type="file" name="file3" /><br />
 {% endblock %}

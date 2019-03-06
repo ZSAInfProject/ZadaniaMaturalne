@@ -3,8 +3,9 @@
         {% block title %}{% endblock %}
     </head>
     <body>
-        <form method="POST" enctype="multipart/form-data">
-            <input type="file" name="file" />
+        <form method="POST" enctype="multipart/form-data" />
+            <input type="file" name="file" /><br />
+            {% block files %}{% endblock %}
             <input type="submit" />
         </form>
     </body>
