@@ -1,6 +1,6 @@
 import math
 
-def zadanie58():
+def zadanie58(f1, f2, f3):
         lines1 = []
         lines2 = []
         lines3 = []
@@ -11,26 +11,23 @@ def zadanie58():
         hours2 = []
         hours3 = []
 
-        with open("dane_systemy1.txt", "r") as file:
-                lines1 = file.readlines()
+        lines1 = f1.read().splitlines()
+        lines2 = f2.readlines()
+        lines3 = f3.readlines()
 
-        with open("dane_systemy2.txt", "r") as file:
-                lines2 = file.readlines()
-
-        with open("dane_systemy3.txt", "r") as file:
-                lines3 = file.readlines()
+        print(lines1)
 
         for x in lines1:
-                temps1.append(int(x.split(" ")[1], 2))
-                hours1.append(int(x.split(" ")[0], 2))
+                temps1.append(int(x.decode().split(" ")[1], 2))
+                hours1.append(int(x.decode().split(" ")[0], 2))
 
         for x in lines2:
-                temps2.append(int(x.split(" ")[1], 4))
-                hours2.append(int(x.split(" ")[0], 4))
+                temps2.append(int(x.decode().split(" ")[1], 4))
+                hours2.append(int(x.decode().split(" ")[0], 4))
 
         for x in lines3:
-                temps3.append(int(x.split(" ")[1], 8))
-                hours3.append(int(x.split(" ")[0], 8))
+                temps3.append(int(x.decode().split(" ")[1], 8))
+                hours3.append(int(x.decode().split(" ")[0], 8))
 
         minimum1 = float("inf")
         minimum2 = float("inf")
@@ -95,7 +92,7 @@ def zadanie58():
                                 max_skok = skok
                 start += 1
 
-        plik = open("systemy_wyniki.txt", "w")
+        plik = open("wyniki.txt", "w")
 
         plik.write("58.1\n")
         plik.write("Najnizsza temp w stacji 1: {}\n".format(najnizsza1))

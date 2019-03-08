@@ -1,6 +1,10 @@
 from app import app
 from flask import render_template, request
 from werkzeug.utils import secure_filename
+import os
+
+UPLOAD_FOLDER = "static/uploaded/"
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route('/index')
 @app.route('/')
@@ -17,12 +21,9 @@ def load_file():
         f1 = request.files['file']
         f2 = request.files['file2']
         f3 = request.files['file3']
-        f1.save(secure_filename(f1.filename))
-        f2.save(secure_filename(f2.filename))
-        f3.save(secure_filename(f3.filename))
         from zbior_zadan.zad58.zad58 import zadanie58
-        zadanie58()
-        file = open('systemy_wyniki.txt', 'r')
+        zadanie58(f1, f2, f3)
+        file = open('wyniki.txt', 'r')
         data = file.read()
         file.close()
         data = data.split('\n')
@@ -36,9 +37,8 @@ def page2():
 def load_file2():
     if request.method == 'POST':
         f = request.files['file']
-        f.save(secure_filename(f.filename))
     from zbior_zadan.zad60.zad60 import zadanie60
-    zadanie60()
+    zadanie60(f)
     file = open('wyniki.txt', 'r')
     data = file.read()
     file.close()

@@ -1,12 +1,10 @@
 from math import sqrt
 
-def zadanie60():
+def zadanie60(f):
     liczby = []
-
     mniej1000 = []
 
-    with open("liczby.txt", "r") as file:
-        liczby = file.read().splitlines()
+    liczby = f.read().splitlines()
 
     for index, liczba in enumerate(liczby):
         liczby[index] = int(liczba)
